@@ -31,3 +31,48 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 ]
             }
         ]
+        
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "What is your Favourite Machine Learning language?",
+            "choices": [
+                "Matlab",
+                "Python",
+                "R,
+                "TensorFlow"
+            ]
+        }
+        
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "What is your Favourite Machine Learning language?",
+                "choices": [
+                    {
+                        "choice": "Matlab",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "R",
+                        "votes": 0
+                    }, {
+                        "choice": "TensorFlow",
+                        "votes": 0
+                    }
+                ]
+            }
